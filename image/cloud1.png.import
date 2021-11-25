@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cloud1.png-d38d4faf332e09ceb946321ca19b397c.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/cloud1.png"
+dest_files=[ "res://.import/cloud1.png-d38d4faf332e09ceb946321ca19b397c.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

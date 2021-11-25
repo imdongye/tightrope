@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/bird0.png-0b8405719c7dbf7b44704ec1737e6e85.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/bird0.png"
+dest_files=[ "res://.import/bird0.png-0b8405719c7dbf7b44704ec1737e6e85.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

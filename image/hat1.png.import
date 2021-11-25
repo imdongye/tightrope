@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/hat1.png-2543baac23eee479912e3c24341bfdf3.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/hat1.png"
+dest_files=[ "res://.import/hat1.png-2543baac23eee479912e3c24341bfdf3.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

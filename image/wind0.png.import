@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/wind0.png-13758ddfb2e4bcca02d13a45ea617871.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/wind0.png"
+dest_files=[ "res://.import/wind0.png-13758ddfb2e4bcca02d13a45ea617871.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

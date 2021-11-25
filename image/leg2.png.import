@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/leg2.png-19a8071c5c770d03c6e2421d0753f6fa.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/leg2.png"
+dest_files=[ "res://.import/leg2.png-19a8071c5c770d03c6e2421d0753f6fa.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

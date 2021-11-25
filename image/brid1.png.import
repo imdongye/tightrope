@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/brid1.png-8b5ed26898fe6b999ee762f328f160dd.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/brid1.png"
+dest_files=[ "res://.import/brid1.png-8b5ed26898fe6b999ee762f328f160dd.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

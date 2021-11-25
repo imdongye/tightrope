@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/sun.png-cf23ac7e5ab2837779d3beb17f831e4d.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/sun.png"
+dest_files=[ "res://.import/sun.png-cf23ac7e5ab2837779d3beb17f831e4d.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

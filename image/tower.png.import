@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/tower.png-c43b46c4679e961fb1c438203a82f72b.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/tower.png"
+dest_files=[ "res://.import/tower.png-c43b46c4679e961fb1c438203a82f72b.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

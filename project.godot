@@ -11,12 +11,19 @@ config_version=4
 [application]
 
 config/name="Tightrope"
+run/main_scene="res://level_scene/level_scene.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1200
+window/size/height=2500
+window/size/test_width=600
+window/size/test_height=1250
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/body.png-d0892dfdc2fb39210e4bf7ea13602ea0.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/body.png"
+dest_files=[ "res://.import/body.png-d0892dfdc2fb39210e4bf7ea13602ea0.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false

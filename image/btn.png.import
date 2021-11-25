@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/btn.png-07457945a9f22ba7d0ace3a6d8f9219c.res"
+group_file="res://image/.png"
+valid=true
+[deps]
+
+
+source_file="res://image/btn.png"
+dest_files=[ "res://.import/btn.png-07457945a9f22ba7d0ace3a6d8f9219c.res" ]
+
+[params]
+
+atlas_file="res://image/.png"
+import_mode=0
+crop_to_region=false
