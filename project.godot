@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Camera",
+"class": "CameraCtrl",
+"language": "GDScript",
+"path": "res://level_scene/CameraCtrl.gd"
+}, {
+"base": "Spatial",
+"class": "Player",
+"language": "GDScript",
+"path": "res://level_scene/player/Player.gd"
+} ]
+_global_script_class_icons={
+"CameraCtrl": "",
+"Player": ""
+}
+
 [application]
 
 config/name="Tightrope"
