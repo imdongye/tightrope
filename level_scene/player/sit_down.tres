@@ -4,7 +4,7 @@
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("ImgPivot/Legs/Leg0:visible")
+tracks/0/path = NodePath("RigidBody/ImgPivot/Legs/Leg0:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ImgPivot/Legs/Leg1:visible")
+tracks/1/path = NodePath("RigidBody/ImgPivot/Legs/Leg1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ImgPivot/Legs/Leg2:visible")
+tracks/2/path = NodePath("RigidBody/ImgPivot/Legs/Leg2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -40,7 +40,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ImgPivot/ArmLeft:rotation_degrees")
+tracks/3/path = NodePath("RigidBody/ImgPivot/ArmLeft:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -52,7 +52,7 @@ tracks/3/keys = {
 "values": [ Vector3( 0, 0, -70.348 ), Vector3( 0, 0, -84.378 ), Vector3( 0, 0, -70.348 ), Vector3( 0, 0, -63.564 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ImgPivot/ArmRight:rotation_degrees")
+tracks/4/path = NodePath("RigidBody/ImgPivot/ArmRight:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -64,7 +64,7 @@ tracks/4/keys = {
 "values": [ Vector3( -5.84719e-12, -180, -70.348 ), Vector3( -1.49398e-06, -180, -60.404 ), Vector3( -5.84719e-12, -180, -70.348 ), Vector3( 2.8022e-06, -180, -89.247 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("ImgPivot:translation")
+tracks/5/path = NodePath("RigidBody/ImgPivot:translation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -76,7 +76,7 @@ tracks/5/keys = {
 "values": [ Vector3( 0.202931, -1.61754, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ImgPivot:rotation_degrees")
+tracks/6/path = NodePath("RigidBody/ImgPivot:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false

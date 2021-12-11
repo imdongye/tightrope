@@ -15,12 +15,24 @@ _global_script_classes=[ {
 "path": "res://level_scene/CameraCtrl.gd"
 }, {
 "base": "Spatial",
+"class": "LevelScene",
+"language": "GDScript",
+"path": "res://level_scene/LevelScene.gd"
+}, {
+"base": "Control",
+"class": "LevelUI",
+"language": "GDScript",
+"path": "res://level_scene/LevelUI.gd"
+}, {
+"base": "Spatial",
 "class": "Player",
 "language": "GDScript",
 "path": "res://level_scene/player/Player.gd"
 } ]
 _global_script_class_icons={
 "CameraCtrl": "",
+"LevelScene": "",
+"LevelUI": "",
 "Player": ""
 }
 

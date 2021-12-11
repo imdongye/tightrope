@@ -1,21 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://level_scene/player/sit_down.tres" type="Animation" id=1]
 [ext_resource path="res://level_scene/player/jump.tres" type="Animation" id=2]
-[ext_resource path="res://image/leg0.png" type="Texture" id=3]
-[ext_resource path="res://image/leg2.png" type="Texture" id=4]
+[ext_resource path="res://image/arm2.png" type="Texture" id=3]
+[ext_resource path="res://image/arm1.png" type="Texture" id=4]
 [ext_resource path="res://image/leg1.png" type="Texture" id=5]
-[ext_resource path="res://image/hat1.png" type="Texture" id=6]
-[ext_resource path="res://image/arm0.png" type="Texture" id=7]
-[ext_resource path="res://image/arm2.png" type="Texture" id=8]
-[ext_resource path="res://image/body.png" type="Texture" id=9]
-[ext_resource path="res://image/arm1.png" type="Texture" id=10]
+[ext_resource path="res://image/arm0.png" type="Texture" id=6]
+[ext_resource path="res://image/leg0.png" type="Texture" id=7]
+[ext_resource path="res://level_scene/sprite_material.tres" type="Material" id=8]
+[ext_resource path="res://image/leg2.png" type="Texture" id=9]
+[ext_resource path="res://image/body.png" type="Texture" id=10]
 [ext_resource path="res://level_scene/player/Player.gd" type="Script" id=11]
+
+[sub_resource type="CapsuleShape" id=3]
+height = 4.6565
+
+[sub_resource type="QuadMesh" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("ImgPivot/Legs/Leg0:visible")
+tracks/0/path = NodePath("RigidBody/ImgPivot/Legs/Leg0:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +32,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ImgPivot/Legs/Leg1:visible")
+tracks/1/path = NodePath("RigidBody/ImgPivot/Legs/Leg1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,7 +44,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ImgPivot/Legs/Leg2:visible")
+tracks/2/path = NodePath("RigidBody/ImgPivot/Legs/Leg2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,7 +56,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ImgPivot/ArmLeft:rotation_degrees")
+tracks/3/path = NodePath("RigidBody/ImgPivot/ArmLeft:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,7 +68,7 @@ tracks/3/keys = {
 "values": [ Vector3( 0, 0, -70.348 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ImgPivot/ArmRight:rotation_degrees")
+tracks/4/path = NodePath("RigidBody/ImgPivot/ArmRight:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,7 +80,7 @@ tracks/4/keys = {
 "values": [ Vector3( -5.84719e-12, -180, -70.348 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("ImgPivot:translation")
+tracks/5/path = NodePath("RigidBody/ImgPivot:translation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -87,7 +92,7 @@ tracks/5/keys = {
 "values": [ Vector3( 0.202931, -1.61754, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ImgPivot:rotation_degrees")
+tracks/6/path = NodePath("RigidBody/ImgPivot:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -105,7 +110,7 @@ length = 0.4
 loop = true
 step = 0.0333333
 tracks/0/type = "value"
-tracks/0/path = NodePath("ImgPivot/Legs:scale")
+tracks/0/path = NodePath("RigidBody/ImgPivot/Legs:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -117,7 +122,7 @@ tracks/0/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( -1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ImgPivot/Legs/Leg1:visible")
+tracks/1/path = NodePath("RigidBody/ImgPivot/Legs/Leg1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -129,7 +134,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ImgPivot/Legs/Leg2:visible")
+tracks/2/path = NodePath("RigidBody/ImgPivot/Legs/Leg2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -141,7 +146,7 @@ tracks/2/keys = {
 "values": [ false, true, false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ImgPivot:translation")
+tracks/3/path = NodePath("RigidBody/ImgPivot:translation")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -153,7 +158,7 @@ tracks/3/keys = {
 "values": [ Vector3( 0.0675949, 0, 0 ), Vector3( 0.202931, 0, 0 ), Vector3( -0.106242, 0, 0 ), Vector3( -0.222772, 0, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ImgPivot/Legs/Leg0:visible")
+tracks/4/path = NodePath("RigidBody/ImgPivot/Legs/Leg0:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -168,87 +173,98 @@ tracks/4/keys = {
 [node name="Player" type="Spatial"]
 script = ExtResource( 11 )
 
-[node name="ImgPivot" type="Spatial" parent="."]
+[node name="RigidBody" type="RigidBody" parent="."]
+mode = 1
+sleeping = true
+can_sleep = false
 
-[node name="Hat" type="Sprite3D" parent="ImgPivot"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0556587, 6.33575, 0 )
-alpha_cut = 2
-texture = ExtResource( 6 )
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.45139, 0 )
+shape = SubResource( 3 )
 
-[node name="Body" type="Sprite3D" parent="ImgPivot"]
+[node name="ImgPivot" type="Spatial" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202931, -1.61754, 0 )
+
+[node name="Body" type="Sprite3D" parent="RigidBody/ImgPivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0458701, 4.31712, 0 )
 alpha_cut = 2
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
-[node name="Legs" type="Spatial" parent="ImgPivot"]
+[node name="Hat" type="MeshInstance" parent="RigidBody/ImgPivot/Body"]
+transform = Transform( 1.59044, 0, 0, 0, 1.16835, 0, 0, 0, 1, -0.0520562, 2.0056, 0.0327432 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 8 )
+
+[node name="Legs" type="Spatial" parent="RigidBody/ImgPivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388376, -0.0520813 )
 
-[node name="Leg0" type="Sprite3D" parent="ImgPivot/Legs"]
+[node name="Leg0" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487806, 1.13984, -0.0753341 )
-visible = false
 alpha_cut = 2
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 
-[node name="Leg1" type="Sprite3D" parent="ImgPivot/Legs"]
+[node name="Leg1" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140148, 0.973665, -0.0753341 )
+visible = false
 alpha_cut = 2
 texture = ExtResource( 5 )
 
-[node name="Leg2" type="Sprite3D" parent="ImgPivot/Legs"]
+[node name="Leg2" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57396, 0.973665, -0.0753341 )
 visible = false
 alpha_cut = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 
-[node name="ArmLeft" type="Spatial" parent="ImgPivot"]
+[node name="ArmLeft" type="Spatial" parent="RigidBody/ImgPivot"]
 transform = Transform( 0.235415, 0.659227, 0, -0.659227, 0.235415, 0, 0, 0, 1, -0.469003, 3.76906, -0.026 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmLeft"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424374, -0.611792, 0.0214019 )
 alpha_cut = 2
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
-[node name="Joint" type="Spatial" parent="ImgPivot/ArmLeft/Sprite3D"]
+[node name="Joint" type="Spatial" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D"]
 transform = Transform( 0.940175, 0.340691, 0, -0.340691, 0.940175, 0, 0, 0, 1, -0.0906951, -0.769156, 0 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmLeft/Sprite3D/Joint"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint"]
 transform = Transform( 1, 4.65661e-10, 0, -4.65661e-10, 1, 0, 0, 0, 1, 0.0237966, -0.556364, 0.0328635 )
 alpha_cut = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 4 )
 
-[node name="joint" type="Spatial" parent="ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D"]
+[node name="joint" type="Spatial" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D"]
 transform = Transform( 0.989511, 0.14446, 0, -0.14446, 0.989511, 0, 0, 0, 1, -0.0109987, -0.54613, 0 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D/joint"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D/joint"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116906, -0.294479, 0.101 )
 flip_h = true
 alpha_cut = 2
-texture = ExtResource( 8 )
+texture = ExtResource( 3 )
 
-[node name="ArmRight" type="Spatial" parent="ImgPivot"]
+[node name="ArmRight" type="Spatial" parent="RigidBody/ImgPivot"]
 transform = Transform( -0.235415, -0.659227, 8.74228e-08, -0.659227, 0.235415, 1.02053e-13, -2.05807e-08, -5.76314e-08, -1, 0.759013, 3.76864, -0.0257196 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmRight"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424374, -0.611792, 0.0214019 )
 alpha_cut = 2
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
-[node name="Joint" type="Spatial" parent="ImgPivot/ArmRight/Sprite3D"]
+[node name="Joint" type="Spatial" parent="RigidBody/ImgPivot/ArmRight/Sprite3D"]
 transform = Transform( 0.940175, 0.340691, 0, -0.340691, 0.940175, 0, 0, 0, 1, -0.0906951, -0.769156, 0 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmRight/Sprite3D/Joint"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint"]
 transform = Transform( 1, 4.65661e-10, 0, -4.65661e-10, 1, 2.84217e-14, 0, -7.10543e-15, 1, 0.0237956, -0.556364, -0.0328635 )
 alpha_cut = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 4 )
 
-[node name="joint" type="Spatial" parent="ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D"]
+[node name="joint" type="Spatial" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D"]
 transform = Transform( 0.989511, 0.14446, 0, -0.14446, 0.989511, 0, 0, 0, 1, -0.0109987, -0.54613, 0 )
 
-[node name="Sprite3D" type="Sprite3D" parent="ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D/joint"]
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D/joint"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116906, -0.294479, 0.101 )
 flip_h = true
 alpha_cut = 2
-texture = ExtResource( 8 )
+texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
