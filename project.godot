@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Spatial",
+"class": "Bird",
+"language": "GDScript",
+"path": "res://level_scene/Bird.gd"
+}, {
 "base": "Camera",
 "class": "CameraCtrl",
 "language": "GDScript",
 "path": "res://level_scene/CameraCtrl.gd"
+}, {
+"base": "Area",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://level_scene/Coin.gd"
 }, {
 "base": "Spatial",
 "class": "LevelScene",
@@ -30,7 +40,9 @@ _global_script_classes=[ {
 "path": "res://level_scene/player/Player.gd"
 } ]
 _global_script_class_icons={
+"Bird": "",
 "CameraCtrl": "",
+"Coin": "",
 "LevelScene": "",
 "LevelUI": "",
 "Player": ""
@@ -51,6 +63,12 @@ window/size/test_height=1250
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Bird"
+3d_physics/layer_3="Coin"
 
 [physics]
 

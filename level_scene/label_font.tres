@@ -1,7 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://fonts/mak.ttf" type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://fonts/mak.ttf"
 
 [resource]
-size = 113
-font_data = ExtResource( 1 )
+size = 180
+font_data = SubResource( 10 )

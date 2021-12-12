@@ -73,7 +73,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0.202931, -1.61754, 0 ) ]
+"values": [ Vector3( -0.114828, -2.03912, 0 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("RigidBody/ImgPivot:rotation_degrees")

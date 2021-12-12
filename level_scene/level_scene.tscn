@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://image/rope.png" type="Texture" id=1]
 [ext_resource path="res://image/building.png" type="Texture" id=2]
@@ -6,10 +6,10 @@
 [ext_resource path="res://level_scene/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level_scene/CameraCtrl.gd" type="Script" id=5]
 [ext_resource path="res://image/tower.png" type="Texture" id=6]
-[ext_resource path="res://level_scene/label_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://level_scene/Bird.tscn" type="PackedScene" id=7]
 [ext_resource path="res://image/coin.png" type="Texture" id=8]
 [ext_resource path="res://level_scene/LevelUI.gd" type="Script" id=9]
-[ext_resource path="res://image/btn.png" type="Texture" id=10]
+[ext_resource path="res://level_scene/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://image/sun.png" type="Texture" id=11]
 [ext_resource path="res://image/back.png" type="Texture" id=12]
 [ext_resource path="res://image/load.png" type="Texture" id=13]
@@ -18,36 +18,298 @@
 [ext_resource path="res://level_scene/btns_theme.tres" type="Theme" id=16]
 [ext_resource path="res://fonts/mak.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://level_scene/LevelScene.gd" type="Script" id=18]
-[ext_resource path="res://level_scene/rope_material.tres" type="Material" id=19]
-
-[sub_resource type="QuadMesh" id=8]
-material = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 167
 font_data = ExtResource( 17 )
 
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://Fonts/mak.ttf"
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://fonts/mak.ttf"
 
-[sub_resource type="DynamicFont" id=1]
-size = 108
-font_data = SubResource( 3 )
+[sub_resource type="DynamicFont" id=11]
+size = 107
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 119
+font_data = SubResource( 10 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 106
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 55
 font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 87
 font_data = ExtResource( 17 )
 
+[sub_resource type="DynamicFont" id=13]
+size = 163
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 196
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 71
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0.733333 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 105
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 171
+font_data = SubResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_unshaded = true
+flags_albedo_tex_force_srgb = true
+params_diffuse_mode = 4
+albedo_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 18 )
+
 [node name="level_scene" type="Spatial"]
 script = ExtResource( 18 )
+
+[node name="LevelUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main_meter" type="Label" parent="LevelUI"]
+margin_left = 58.0
+margin_top = 7.0
+margin_right = 502.0
+margin_bottom = 199.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "1.1m"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="best_meter" type="Label" parent="LevelUI"]
+margin_left = 61.0
+margin_top = 180.0
+margin_right = 623.0
+margin_bottom = 311.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "10m"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Label" parent="LevelUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -151.0
+margin_top = 48.0
+margin_right = -17.0
+margin_bottom = 172.0
+grow_horizontal = 0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = ": 2"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="LevelUI/coin"]
+margin_left = -77.0
+margin_top = 21.0
+margin_right = 7.0
+margin_bottom = 101.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="LevelUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -345.0
+margin_top = 169.0
+margin_right = -42.0
+margin_bottom = 269.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "10 s"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="state" type="Label" parent="LevelUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -101.0
+margin_right = 485.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "state : windy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Panel" parent="LevelUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 165.0
+margin_top = 631.0
+margin_right = -165.0
+margin_bottom = -631.0
+theme = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -277.0
+margin_top = 89.0
+margin_right = 313.0
+margin_bottom = 276.0
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 13 )
+text = "GameOver"
+align = 1
+
+[node name="explan" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -305.0
+margin_top = 340.0
+margin_right = 298.0
+margin_bottom = 532.0
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 9 )
+text = "new score"
+align = 1
+
+[node name="score" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -142.0
+margin_top = 448.0
+margin_right = 138.0
+margin_bottom = 673.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "50m"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.0
+margin_top = 655.0
+margin_right = 125.0
+margin_bottom = 774.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "+ 2 won"
+align = 1
+
+[node name="replayBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -181.0
+margin_top = -394.0
+margin_right = 164.0
+margin_bottom = -286.0
+focus_mode = 0
+theme = ExtResource( 16 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "REPLAY"
+
+[node name="homeBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -139.0
+margin_top = -226.0
+margin_right = 112.0
+margin_bottom = -110.0
+focus_mode = 0
+theme = ExtResource( 16 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "HOME"
+
+[node name="Cheating" type="Panel" parent="LevelUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 417.0
+margin_bottom = -1194.0
+theme = ExtResource( 16 )
+custom_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="LevelUI/Cheating"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -496.0
+margin_top = 91.0
+margin_right = 487.0
+margin_bottom = 281.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.745098, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "- illegal detection -"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="LevelUI/Cheating"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -532.0
+margin_top = 326.0
+margin_right = 546.0
+margin_bottom = 728.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.745098, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "put your phone vertically."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Ground" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -27.0815, -174.732 )
@@ -443,182 +705,31 @@ material/0 = null
 [node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999147, -0.0412827, 0, 0.0412827, 0.999147, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="LevelUI" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Birds" type="Spatial" parent="."]
 
-[node name="main_meter" type="Label" parent="LevelUI"]
-margin_left = 58.0
-margin_top = 7.0
-margin_right = 502.0
-margin_bottom = 199.0
-theme = ExtResource( 16 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "1.1m"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bird" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75147, 2.60353, -5.00648 )
 
-[node name="best_meter" type="Label" parent="LevelUI"]
-margin_left = 64.0
-margin_top = 180.0
-margin_right = 626.0
-margin_bottom = 311.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "10m"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bird2" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40942, 4.05365, -91.7949 )
 
-[node name="coin" type="Label" parent="LevelUI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -151.0
-margin_top = 48.0
-margin_right = -17.0
-margin_bottom = 172.0
-grow_horizontal = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = ": 2"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bird3" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58032, 2.81751, -25.1272 )
 
-[node name="TextureRect" type="TextureRect" parent="LevelUI/coin"]
-margin_left = -77.0
-margin_top = 21.0
-margin_right = 7.0
-margin_bottom = 101.0
-texture = ExtResource( 8 )
-expand = true
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bird5" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67657, 2.81751, -74.1758 )
 
-[node name="time" type="Label" parent="LevelUI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -345.0
-margin_top = 169.0
-margin_right = -42.0
-margin_bottom = 269.0
-theme = ExtResource( 16 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 4 )
-text = "10 s"
-align = 2
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Bird4" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43161, 2.45245, -10.7672 )
 
-[node name="GameOver" type="NinePatchRect" parent="LevelUI"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 172.0
-margin_top = 649.0
-margin_right = -437.0
-margin_bottom = -1026.0
-rect_scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 10 )
-patch_margin_left = 54
-patch_margin_top = 64
-patch_margin_right = 66
-patch_margin_bottom = 43
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Coins" type="Spatial" parent="."]
 
-[node name="Label" type="Label" parent="LevelUI/GameOver"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -203.5
-margin_top = 63.3333
-margin_right = 209.5
-margin_bottom = 198.333
-theme = ExtResource( 16 )
-custom_fonts/font = ExtResource( 7 )
-text = "GameOver"
-align = 1
+[node name="Coin" parent="Coins" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.57881, -61.025 )
 
-[node name="score" type="Label" parent="LevelUI/GameOver"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -139.5
-margin_top = 276.667
-margin_right = 140.5
-margin_bottom = 410.667
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 7 )
-text = "50m"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="coin" type="Label" parent="LevelUI/GameOver"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -143.5
-margin_top = 406.667
-margin_right = 136.5
-margin_bottom = 525.667
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "+ 2 won"
-align = 1
-
-[node name="replayBtn" type="Button" parent="LevelUI/GameOver"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -110.167
-margin_top = -277.0
-margin_right = 106.833
-margin_bottom = -184.0
-focus_mode = 0
-theme = ExtResource( 16 )
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-text = "REPLAY"
-
-[node name="homeBtn" type="Button" parent="LevelUI/GameOver"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -106.833
-margin_top = -160.333
-margin_right = 110.167
-margin_bottom = -67.3333
-focus_mode = 0
-theme = ExtResource( 16 )
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-text = "HOME"
-
-[node name="state" type="Label" parent="LevelUI"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -101.0
-margin_right = 485.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "state : windy"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Coin2" parent="Coins" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34532, 8.00406, -29.8864 )
 
 [connection signal="pressed" from="LevelUI/GameOver/replayBtn" to="LevelUI" method="_on_replayBtn_pressed"]
+[connection signal="button_down" from="LevelUI/GameOver/homeBtn" to="LevelUI" method="_on_homeBtn_button_down"]
 [connection signal="pressed" from="LevelUI/GameOver/homeBtn" to="LevelUI" method="_on_homeBtn_pressed"]
