@@ -3,8 +3,11 @@
 ## How to play?
 
 => click and drag x axis to balancing and move, drag left turn right, drag right turn left
+
 => click and slide up to jump, jump to get a coin
+
 => don't click then sit down and rest
+
 => go as far as you can to save the cat!
 
 ## copyright
