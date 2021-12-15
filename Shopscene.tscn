@@ -1,0 +1,224 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Shopscene.gd" type="Script" id=1]
+[ext_resource path="res://img/background-6556386_1920.jpg" type="Texture" id=2]
+[ext_resource path="res://Interface/font/mak.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://image/hat1.png" type="Texture" id=4]
+[ext_resource path="res://image/hat2.png" type="Texture" id=5]
+[ext_resource path="res://image/hat3.png" type="Texture" id=6]
+[ext_resource path="res://image/hat4.png" type="Texture" id=7]
+[ext_resource path="res://image/hat5.png" type="Texture" id=8]
+[ext_resource path="res://mak.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://UI/green_cross.png" type="Texture" id=10]
+[ext_resource path="res://Sound/[MapleStory BGM] Cash Shop.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Sound/confirmation_001.ogg" type="AudioStream" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0.215686, 0.0823529, 0.0823529, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 3 )
+
+[node name="Shopscene" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 610.093, 1261.75 )
+scale = Vector2( 0.894438, 1.30494 )
+texture = ExtResource( 2 )
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 96.5693
+margin_top = 1535.7
+margin_right = 186.569
+margin_bottom = 1625.7
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.772549, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.129412, 0.129412, 1 )
+custom_colors/font_color_pressed = Color( 0.580392, 0.247059, 0.247059, 1 )
+text = "5"
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 619.635
+margin_top = 1075.49
+margin_right = 709.635
+margin_bottom = 1165.49
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.772549, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.129412, 0.129412, 1 )
+custom_colors/font_color_pressed = Color( 0.580392, 0.247059, 0.247059, 1 )
+text = "4"
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 92.787
+margin_top = 1052.33
+margin_right = 182.787
+margin_bottom = 1142.33
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.772549, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.129412, 0.129412, 1 )
+custom_colors/font_color_pressed = Color( 0.580392, 0.247059, 0.247059, 1 )
+text = "3"
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 600.549
+margin_top = 657.357
+margin_right = 690.549
+margin_bottom = 747.357
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.772549, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.129412, 0.129412, 1 )
+custom_colors/font_color_pressed = Color( 0.580392, 0.247059, 0.247059, 1 )
+text = "2"
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Button1" type="Button" parent="."]
+margin_left = 95.1629
+margin_top = 645.445
+margin_right = 185.163
+margin_bottom = 735.445
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.772549, 0.270588, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.129412, 0.129412, 1 )
+custom_colors/font_color_pressed = Color( 0.580392, 0.247059, 0.247059, 1 )
+text = "1"
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0.352941, 0.054902, 0.054902, 0.47451 )
+self_modulate = Color( 0.34902, 0.211765, 0.211765, 1 )
+margin_left = 64.0
+margin_top = 71.0
+margin_right = 616.0
+margin_bottom = 239.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 97.0
+margin_right = 728.0
+margin_bottom = 234.0
+custom_fonts/font = SubResource( 2 )
+text = "Hats SHOP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 191.724
+margin_top = 726.534
+margin_right = 327.724
+margin_bottom = 827.534
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 746.716
+margin_top = 739.989
+margin_right = 848.716
+margin_bottom = 845.989
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 201.815
+margin_top = 1183.98
+margin_right = 328.815
+margin_bottom = 1276.98
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 732.094
+margin_top = 1189.91
+margin_right = 854.094
+margin_bottom = 1302.91
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+margin_left = 216.732
+margin_top = 1659.54
+margin_right = 338.732
+margin_bottom = 1772.54
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GobackButton" type="Button" parent="."]
+margin_left = 1010.95
+margin_top = 82.0548
+margin_right = 1143.95
+margin_bottom = 223.055
+icon = ExtResource( 10 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shopmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -12.0
+autoplay = true
+
+[node name="Clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="toggled" from="Button5" to="." method="_on_Button5_toggled"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="toggled" from="Button4" to="." method="_on_Button4_toggled"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="toggled" from="Button3" to="." method="_on_Button3_toggled"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="toggled" from="Button2" to="." method="_on_Button2_toggled"]
+[connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
+[connection signal="toggled" from="Button1" to="." method="_on_Button1_toggled"]
+[connection signal="pressed" from="GobackButton" to="." method="_on_GobackButton_pressed"]

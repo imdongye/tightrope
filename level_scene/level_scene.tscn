@@ -1,0 +1,812 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://image/rope.png" type="Texture" id=1]
+[ext_resource path="res://image/building.png" type="Texture" id=2]
+[ext_resource path="res://image/cat.png" type="Texture" id=3]
+[ext_resource path="res://level_scene/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level_scene/CameraCtrl.gd" type="Script" id=5]
+[ext_resource path="res://image/tower.png" type="Texture" id=6]
+[ext_resource path="res://level_scene/Bird.tscn" type="PackedScene" id=7]
+[ext_resource path="res://image/coin.png" type="Texture" id=8]
+[ext_resource path="res://level_scene/LevelUI.gd" type="Script" id=9]
+[ext_resource path="res://level_scene/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://image/sun.png" type="Texture" id=11]
+[ext_resource path="res://image/back.png" type="Texture" id=12]
+[ext_resource path="res://image/load.png" type="Texture" id=13]
+[ext_resource path="res://image/cloud0.png" type="Texture" id=14]
+[ext_resource path="res://image/cloud1.png" type="Texture" id=15]
+[ext_resource path="res://level_scene/btns_theme.tres" type="Theme" id=16]
+[ext_resource path="res://fonts/mak.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://level_scene/LevelScene.gd" type="Script" id=18]
+[ext_resource path="res://image/credit.png" type="Texture" id=19]
+[ext_resource path="res://level_scene/sounds/bgm.mp3" type="AudioStream" id=20]
+
+[sub_resource type="DynamicFont" id=2]
+size = 167
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://fonts/mak.ttf"
+
+[sub_resource type="DynamicFont" id=20]
+size = 94
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 119
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 106
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 87
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 163
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 100
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 196
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 71
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0, 0, 0.733333 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 105
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 171
+font_data = SubResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 692, 388 )
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_unshaded = true
+flags_albedo_tex_force_srgb = true
+params_diffuse_mode = 4
+albedo_color = Color( 0.376471, 0.376471, 0.376471, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=8]
+material = SubResource( 18 )
+
+[node name="level_scene" type="Spatial"]
+script = ExtResource( 18 )
+
+[node name="LevelUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="main_meter" type="Label" parent="LevelUI"]
+margin_left = 58.0
+margin_top = 7.0
+margin_right = 502.0
+margin_bottom = 199.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "1.1m"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="best_meter" type="Label" parent="LevelUI"]
+margin_left = 61.0
+margin_top = 180.0
+margin_right = 623.0
+margin_bottom = 311.0
+custom_colors/font_color = Color( 0, 0, 0, 0.662745 )
+custom_fonts/font = SubResource( 20 )
+text = "10m"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Label" parent="LevelUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -151.0
+margin_top = 48.0
+margin_right = -17.0
+margin_bottom = 172.0
+grow_horizontal = 0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = ": 2"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="LevelUI/coin"]
+margin_left = -77.0
+margin_top = 21.0
+margin_right = 7.0
+margin_bottom = 101.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="LevelUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -345.0
+margin_top = 169.0
+margin_right = -42.0
+margin_bottom = 269.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "10 s"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="state" type="Label" parent="LevelUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -101.0
+margin_right = 485.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "state : windy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Panel" parent="LevelUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 165.0
+margin_top = 631.0
+margin_right = -165.0
+margin_bottom = -631.0
+theme = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -277.0
+margin_top = 89.0
+margin_right = 313.0
+margin_bottom = 276.0
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 13 )
+text = "GameOver"
+align = 1
+
+[node name="explan" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -305.0
+margin_top = 340.0
+margin_right = 298.0
+margin_bottom = 532.0
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 9 )
+text = "new score"
+align = 1
+
+[node name="score" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -142.0
+margin_top = 448.0
+margin_right = 138.0
+margin_bottom = 673.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "50m"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Label" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.0
+margin_top = 655.0
+margin_right = 125.0
+margin_bottom = 774.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "+ 2 won"
+align = 1
+
+[node name="replayBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -391.0
+margin_right = 345.0
+margin_bottom = -283.0
+focus_mode = 0
+theme = ExtResource( 16 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "REPLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="homeBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -364.0
+margin_top = -373.0
+margin_right = -113.0
+margin_bottom = -257.0
+focus_mode = 0
+theme = ExtResource( 16 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "HOME"
+
+[node name="creditBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -342.0
+margin_top = -194.0
+margin_right = -91.0
+margin_bottom = -78.0
+focus_mode = 0
+theme = ExtResource( 16 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "CREDIT"
+
+[node name="muteBtn" type="Button" parent="LevelUI/GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = -206.0
+margin_right = 251.0
+margin_bottom = -90.0
+focus_mode = 0
+theme = ExtResource( 16 )
+toggle_mode = true
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "MUTE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cheating" type="Panel" parent="LevelUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 417.0
+margin_bottom = -1194.0
+theme = ExtResource( 16 )
+custom_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="LevelUI/Cheating"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -496.0
+margin_top = 91.0
+margin_right = 487.0
+margin_bottom = 281.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.745098, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "- illegal detection -"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="LevelUI/Cheating"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -532.0
+margin_top = 326.0
+margin_right = 546.0
+margin_bottom = 728.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0.745098, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "put your phone vertically."
+align = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credit" type="Panel" parent="LevelUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -600.0
+margin_top = 788.0
+margin_right = 600.0
+margin_bottom = 1496.0
+theme = ExtResource( 16 )
+custom_styles/panel = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="LevelUI/Credit"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -419.0
+margin_top = -243.0
+margin_right = -146.0
+margin_bottom = -119.0
+text = "BACK"
+
+[node name="Ground" type="Sprite3D" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -27.0815, -174.732 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+pixel_size = 10.0
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 12 )
+
+[node name="buildings" type="Spatial" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 2.70815, -7.5268 )
+
+[node name="building" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 229.346 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building2" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 235.566 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building3" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 241.426 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building4" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 223.177 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building5" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 215.794 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building6" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 208.008 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building7" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 199.764 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building8" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 190.895 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building9" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 183.432 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building10" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 173.966 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building11" type="Sprite3D" parent="Ground/buildings"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.679125, -0.720048, 162.105 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="buildings2" type="Spatial" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 2.70815, -7.5268 )
+
+[node name="building" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 229.346 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building2" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 235.566 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building3" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 241.426 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building4" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 223.177 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building5" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 215.794 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building6" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 208.008 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building7" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 199.764 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building8" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 190.895 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building9" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 183.432 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building10" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 173.966 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="building11" type="Sprite3D" parent="Ground/buildings2"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.680212, -0.720048, 162.105 )
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+alpha_cut = 2
+texture = ExtResource( 2 )
+
+[node name="Tower" type="Sprite3D" parent="Ground"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.96477, 7.4744 )
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="Cat" type="Sprite3D" parent="Ground/Tower"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3058, 0.00591278 )
+alpha_cut = 2
+texture = ExtResource( 3 )
+
+[node name="Tower2" type="Sprite3D" parent="Ground"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.81222, 1.96477, 6.6149 )
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="rope2" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -0.0356274, 7.31265, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope3" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.11671, 4.77615, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope4" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.65349, 3.93392, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope5" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.97891, 2.00462, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope6" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -2.16986, 4.93109, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope7" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -2.94042, 3.57918, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope8" type="Sprite3D" parent="Ground/Tower2"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -3.00335, 1.59819, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="Tower3" type="Sprite3D" parent="Ground"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.78924, 1.96477, 6.8923 )
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="rope2" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -0.0356274, 7.31265, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope3" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.11671, 4.77615, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope4" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.65349, 3.93392, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope5" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, 3.97891, 2.00462, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope6" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -2.16986, 4.93109, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope7" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -2.94042, 3.57918, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="rope8" type="Sprite3D" parent="Ground/Tower3"]
+transform = Transform( -5.98059e-07, 0, 0.593, 0, 1, 0, -15.0414, 0, -2.84964e-08, -3.00335, 1.59819, 55.4905 )
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="loads" type="Spatial" parent="Ground"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.70815, 17.4732 )
+
+[node name="load" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -17.6082, -12.8162, -25.3926 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -17.1959, -12.7726, -39.9863 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -16.8576, -12.8268, -55.2159 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -16.3952, -12.8268, -70.6579 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -15.8734, -12.8268, -85.885 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( -0.00973881, 0, 0.999953, 0, 1, 0, -1.50414, 0, -0.0146492, -14.9924, -12.8268, -102.334 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="load2" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 21.8564, -12.8162, -25.3926 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 21.0616, -12.7726, -39.9863 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 20.535, -12.8268, -55.2159 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 19.9495, -12.7848, -70.9344 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 19.4229, -12.8268, -85.885 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="Ground/loads"]
+transform = Transform( 0.00973764, 0, 1.00004, 0, 1, 0, 1.50397, 0, -0.00647488, 18.6154, -12.8268, -101.638 )
+modulate = Color( 0.866667, 0.866667, 0.866667, 1 )
+axis = 1
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Sky" type="Sprite3D" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 1, 0, 84.4275, -361.82 )
+pixel_size = 7.0
+alpha_cut = 2
+texture = ExtResource( 12 )
+
+[node name="sun" type="Sprite3D" parent="Sky"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 1, -3.63854, -2.69294, 139.854 )
+texture = ExtResource( 11 )
+
+[node name="cloud" type="Sprite3D" parent="Sky"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 1, -3.92345, -5.84, 201.593 )
+texture = ExtResource( 14 )
+
+[node name="cloud2" type="Sprite3D" parent="Sky"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 1, 2.59603, -4.48456, 257.624 )
+texture = ExtResource( 14 )
+
+[node name="cloud3" type="Sprite3D" parent="Sky"]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 1, 0.345819, -5.87012, 81.809 )
+texture = ExtResource( 15 )
+
+[node name="CameraCtrl" type="Camera" parent="."]
+transform = Transform( 1, 5.85297e-08, 1.12689e-08, -5.96046e-08, 0.981965, 0.189061, 0, -0.189061, 0.981965, 6.85453e-07, 9.19664, 20.0043 )
+current = true
+fov = 58.6
+far = 400.0
+script = ExtResource( 5 )
+target_path = NodePath("../Player")
+
+[node name="rope" type="Spatial" parent="."]
+transform = Transform( -6.85395e-07, -1, -4.37114e-08, 0, -4.37114e-08, 1, -12.1124, 3.3766e-08, 1.47596e-15, 0, 0, -39.578 )
+
+[node name="rope" type="MeshInstance" parent="rope"]
+transform = Transform( 10, -8.88178e-16, -1.32349e-23, 0, 0.339, 8.35187e-23, 0, 2.83129e-23, 1, 0, 0, 0 )
+cast_shadow = 0
+generate_lightmap = false
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.999147, -0.0412827, 0, 0.0412827, 0.999147, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Birds" type="Spatial" parent="."]
+
+[node name="Bird" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75147, 2.60353, -5.00648 )
+
+[node name="Bird2" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40942, 4.05365, -91.7949 )
+
+[node name="Bird3" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58032, 2.81751, -25.1272 )
+
+[node name="Bird5" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67657, 2.81751, -74.1758 )
+
+[node name="Bird4" parent="Birds" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43161, 2.45245, -10.7672 )
+
+[node name="Coins" type="Spatial" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.57881, -61.025 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34532, 8.00406, -29.8864 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -3.0
+autoplay = true
+bus = "BGM"
+
+[connection signal="pressed" from="LevelUI/GameOver/replayBtn" to="LevelUI" method="_on_replayBtn_pressed"]
+[connection signal="button_down" from="LevelUI/GameOver/homeBtn" to="LevelUI" method="_on_homeBtn_button_down"]
+[connection signal="pressed" from="LevelUI/GameOver/homeBtn" to="LevelUI" method="_on_homeBtn_pressed"]
+[connection signal="pressed" from="LevelUI/GameOver/creditBtn" to="LevelUI" method="_on_creditBtn_pressed"]
+[connection signal="toggled" from="LevelUI/GameOver/muteBtn" to="LevelUI" method="_on_muteBtn_toggled"]
+[connection signal="pressed" from="LevelUI/Credit/Button" to="LevelUI" method="_on_credit_back_pressed"]

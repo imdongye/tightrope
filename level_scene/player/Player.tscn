@@ -1,0 +1,389 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://level_scene/player/sit_down.tres" type="Animation" id=1]
+[ext_resource path="res://level_scene/player/jump.tres" type="Animation" id=2]
+[ext_resource path="res://image/arm2.png" type="Texture" id=3]
+[ext_resource path="res://image/arm1.png" type="Texture" id=4]
+[ext_resource path="res://image/leg1.png" type="Texture" id=5]
+[ext_resource path="res://image/arm0.png" type="Texture" id=6]
+[ext_resource path="res://image/leg0.png" type="Texture" id=7]
+[ext_resource path="res://image/leg2.png" type="Texture" id=9]
+[ext_resource path="res://image/body.png" type="Texture" id=10]
+[ext_resource path="res://level_scene/player/Player.gd" type="Script" id=11]
+[ext_resource path="res://image/leg4.png" type="Texture" id=12]
+[ext_resource path="res://image/leg3.png" type="Texture" id=13]
+[ext_resource path="res://image/gas.png" type="Texture" id=14]
+[ext_resource path="res://level_scene/sounds/jump.ogg" type="AudioStream" id=15]
+[ext_resource path="res://level_scene/sounds/fall.mp3" type="AudioStream" id=16]
+
+[sub_resource type="PhysicsMaterial" id=1]
+
+[sub_resource type="CapsuleShape" id=2]
+height = 4.6565
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RigidBody/ImgPivot/Legs/Leg0:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RigidBody/ImgPivot/Legs/Leg1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RigidBody/ImgPivot/Legs/Leg2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RigidBody/ImgPivot/ArmLeft:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, -70.348 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RigidBody/ImgPivot/ArmRight:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -5.84719e-12, -180, -70.348 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("RigidBody/ImgPivot:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.202931, -1.61754, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("RigidBody/ImgPivot:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("RigidBody/ImgPivot/Legs/Leg3:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("RigidBody/ImgPivot/Legs/Leg4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("RigidBody/ImgPivot/Gas:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("RigidBody/ImgPivot/Gas:translation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.0697314, 0.979172, 0.280864 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("RigidBody/ImgPivot/Gas:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.245, 1.571, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+loop = true
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("RigidBody/ImgPivot/Legs:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector3( 1, 1, 1 ), Vector3( -1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RigidBody/ImgPivot/Legs/Leg1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.2, 0.266667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RigidBody/ImgPivot/Legs/Leg2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.2, 0.266667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RigidBody/ImgPivot:translation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.0666667, 0.2, 0.266667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector3( 0.0675949, 0, 0 ), Vector3( 0.202931, 0, 0 ), Vector3( -0.106242, 0, 0 ), Vector3( -0.222772, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("RigidBody/ImgPivot/Legs/Leg0:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("RigidBody/ImgPivot/Legs/Leg3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.0333333 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("RigidBody/ImgPivot/Legs/Leg4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.0333333 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 11 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+collision_mask = 6
+mode = 1
+mass = 7.7
+physics_material_override = SubResource( 1 )
+gravity_scale = 4.56
+sleeping = true
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.45139, 0 )
+shape = SubResource( 2 )
+
+[node name="ImgPivot" type="Spatial" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114828, -2.03912, 0 )
+
+[node name="Body" type="Sprite3D" parent="RigidBody/ImgPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0458701, 4.31712, 0 )
+alpha_cut = 2
+texture = ExtResource( 10 )
+
+[node name="Hat" type="Sprite3D" parent="RigidBody/ImgPivot/Body"]
+transform = Transform( 1.59044, 0, 0, 0, 1.16835, 0, 0, 0, 1, -0.0520562, 2.0056, 0.0327432 )
+
+[node name="Legs" type="Spatial" parent="RigidBody/ImgPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.388376, -0.0520813 )
+
+[node name="Leg0" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487806, 1.13984, -0.0753341 )
+alpha_cut = 2
+texture = ExtResource( 7 )
+
+[node name="Leg1" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140148, 0.973665, -0.0753341 )
+visible = false
+alpha_cut = 2
+texture = ExtResource( 5 )
+
+[node name="Leg2" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.57396, 0.973665, -0.0753341 )
+visible = false
+alpha_cut = 2
+texture = ExtResource( 9 )
+
+[node name="Leg3" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216506, 1.35012, -0.0753341 )
+visible = false
+alpha_cut = 2
+texture = ExtResource( 13 )
+
+[node name="Leg4" type="Sprite3D" parent="RigidBody/ImgPivot/Legs"]
+transform = Transform( 0.913, 0, 0, 0, 1, 0, 0, 0, 1, -0.0222158, 1.1256, -0.0753341 )
+visible = false
+alpha_cut = 2
+texture = ExtResource( 12 )
+
+[node name="ArmLeft" type="Spatial" parent="RigidBody/ImgPivot"]
+transform = Transform( 0.235415, 0.659227, 0, -0.659227, 0.235415, 0, 0, 0, 1, -0.469003, 3.98024, -0.026 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424374, -0.611792, 0.0214019 )
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="Joint" type="Spatial" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D"]
+transform = Transform( 0.940175, 0.340691, 0, -0.340691, 0.940175, 0, 0, 0, 1, -0.0906951, -0.769156, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint"]
+transform = Transform( 1, 4.65661e-10, 0, -4.65661e-10, 1, 0, 0, 0, 1, 0.0237966, -0.556364, 0.0328635 )
+alpha_cut = 2
+texture = ExtResource( 4 )
+
+[node name="joint" type="Spatial" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D"]
+transform = Transform( 0.989511, 0.14446, 0, -0.14446, 0.989511, 0, 0, 0, 1, -0.0109987, -0.54613, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmLeft/Sprite3D/Joint/Sprite3D/joint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116906, -0.294479, 0.101 )
+flip_h = true
+alpha_cut = 2
+texture = ExtResource( 3 )
+
+[node name="ArmRight" type="Spatial" parent="RigidBody/ImgPivot"]
+transform = Transform( -0.235415, -0.659227, 8.74228e-08, -0.659227, 0.235415, 1.02053e-13, -2.05807e-08, -5.76314e-08, -1, 0.759013, 3.97982, -0.0257196 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0424374, -0.611792, 0.0214019 )
+alpha_cut = 2
+texture = ExtResource( 6 )
+
+[node name="Joint" type="Spatial" parent="RigidBody/ImgPivot/ArmRight/Sprite3D"]
+transform = Transform( 0.940175, 0.340691, 0, -0.340691, 0.940175, 0, 0, 0, 1, -0.0906951, -0.769156, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint"]
+transform = Transform( 1, 4.65661e-10, 0, -4.65661e-10, 1, 2.84217e-14, 0, -7.10543e-15, 1, 0.0237956, -0.556364, -0.0328635 )
+alpha_cut = 2
+texture = ExtResource( 4 )
+
+[node name="joint" type="Spatial" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D"]
+transform = Transform( 0.989511, 0.14446, 0, -0.14446, 0.989511, 0, 0, 0, 1, -0.0109987, -0.54613, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/ArmRight/Sprite3D/Joint/Sprite3D/joint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116906, -0.294479, 0.101 )
+flip_h = true
+alpha_cut = 2
+texture = ExtResource( 3 )
+
+[node name="Gas" type="Spatial" parent="RigidBody/ImgPivot"]
+transform = Transform( 1.245, 0, 0, 0, 1.571, 0, 0, 0, 1, 0.0697314, 0.979172, 0.280864 )
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody/ImgPivot/Gas"]
+texture = ExtResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.64
+anims/RESET = SubResource( 4 )
+anims/jump = ExtResource( 2 )
+anims/sit_down = ExtResource( 1 )
+anims/walk = SubResource( 5 )
+
+[node name="JumpAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 15 )
+unit_db = 3.0
+
+[node name="FallAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 16 )
+unit_db = 3.0

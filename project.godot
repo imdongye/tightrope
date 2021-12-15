@@ -1,0 +1,93 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Bird",
+"language": "GDScript",
+"path": "res://level_scene/Bird.gd"
+}, {
+"base": "Camera",
+"class": "CameraCtrl",
+"language": "GDScript",
+"path": "res://level_scene/CameraCtrl.gd"
+}, {
+"base": "Area",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://level_scene/Coin.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemies",
+"language": "GDScript",
+"path": "res://hsh/minigametscn/Enemies.gd"
+}, {
+"base": "Spatial",
+"class": "LevelScene",
+"language": "GDScript",
+"path": "res://level_scene/LevelScene.gd"
+}, {
+"base": "Control",
+"class": "LevelUI",
+"language": "GDScript",
+"path": "res://level_scene/LevelUI.gd"
+}, {
+"base": "Spatial",
+"class": "Player",
+"language": "GDScript",
+"path": "res://level_scene/player/Player.gd"
+} ]
+_global_script_class_icons={
+"Bird": "",
+"CameraCtrl": "",
+"Coin": "",
+"Enemies": "",
+"LevelScene": "",
+"LevelUI": "",
+"Player": ""
+}
+
+[application]
+
+config/name="Tightrope"
+run/main_scene="res://Game.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
+
+[display]
+
+window/size/width=1200
+window/size/height=2500
+window/size/test_width=600
+window/size/test_height=1250
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Bird"
+3d_physics/layer_3="Coin"
+
+[physics]
+
+common/enable_pause_aware_picking=true
