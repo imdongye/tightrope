@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://image/body.png" type="Texture" id=1]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( -0.638611, 4.54645 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -14.3611, -30.5944 )
+scale = Vector2( 1.05202, 1.05202 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -72, -4, 288, 385 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -12.5165, -36.3229 )
+scale = Vector2( 10.0959, 7.94292 )
+polygon = PoolVector2Array( 1.05365, -21.6699, -1.8019, -24.1948, -5.27824, -24.037, -6.51979, -21.1964, -7.26471, -17.0934, -7.38887, -10.3077, -5.02993, -9.67647, -6.51979, -4.78443, -2.17437, -3.52197, -1.80191, 1.21227, -5.52655, 4.36843, -6.7681, 25.8303, 1.92274, 26.4615, 7.5097, 26.4615, 7.88216, 18.5711, 7.38554, 13.2057, 8.13047, 7.52458, 8.00632, 1.8435, 4.28167, -0.0501943, 3.78506, -4.311, 7.13724, -7.15154, 6.76477, -12.0436, 8.8754, -15.9888, 8.37878, -18.3559, 7.5097, -20.2496, 4.7783, -22.9323 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( -1.56828, -156.707 )
+scale = Vector2( 1.92, 1.69368 )

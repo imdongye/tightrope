@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Yeon_Sung/YeonSung-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://mak.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://image/sun.png" type="Texture" id=3]
+[ext_resource path="res://hsh/introtscn/manual.gd" type="Script" id=4]
+[ext_resource path="res://hsh/introtscn/start.gd" type="Script" id=5]
+[ext_resource path="res://hsh/introtscn/close.gd" type="Script" id=6]
+[ext_resource path="res://image/manual.png" type="Texture" id=8]
+[ext_resource path="res://image/title.png" type="Texture" id=9]
+[ext_resource path="res://image/btn.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Intro" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -6.12744
+margin_top = -35.6359
+margin_right = 1309.87
+margin_bottom = 2599.36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 202.983
+margin_top = 749.457
+margin_right = 805.983
+margin_bottom = 978.457
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+text = "Catching"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 621.352
+margin_top = 993.869
+margin_right = 1002.35
+margin_bottom = 1222.87
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+text = "Birds"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="TextureButton" parent="ColorRect"]
+margin_left = 395.254
+margin_top = 1390.57
+margin_right = 832.254
+margin_bottom = 1608.57
+texture_normal = ExtResource( 10 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/start"]
+margin_left = 89.3867
+margin_top = 55.6614
+margin_right = 327.387
+margin_bottom = 170.661
+rect_rotation = -4.60681
+rect_pivot_offset = Vector2( 92.9625, 30 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sun" type="Sprite" parent="ColorRect"]
+position = Vector2( 259.378, 485.305 )
+rotation = -0.501604
+texture = ExtResource( 3 )
+
+[node name="title" type="Sprite" parent="ColorRect"]
+position = Vector2( 849.24, 185.444 )
+scale = Vector2( 0.535448, 0.535448 )
+texture = ExtResource( 9 )
+
+[node name="manual" type="TextureButton" parent="ColorRect"]
+margin_left = 384.573
+margin_top = 1675.89
+margin_right = 826.573
+margin_bottom = 1893.89
+texture_normal = ExtResource( 10 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/manual"]
+margin_left = 64.1698
+margin_top = 62.6229
+margin_right = 375.17
+margin_bottom = 177.623
+rect_rotation = -2.95967
+rect_pivot_offset = Vector2( 92.9625, 30 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+text = "MANUAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+visible = false
+margin_left = 117.0
+margin_top = 502.0
+margin_right = 1108.0
+margin_bottom = 2421.0
+color = Color( 0.901961, 0.890196, 0.890196, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="TextureButton" parent="ColorRect/ColorRect"]
+margin_left = 943.623
+margin_top = -1.95648
+margin_right = 987.623
+margin_bottom = 40.0435
+texture_normal = ExtResource( 10 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect/close"]
+margin_left = 12.4108
+margin_top = 7.41624
+margin_right = 38.4108
+margin_bottom = 37.4162
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.286275, 0.286275, 0.286275, 1 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ColorRect"]
+margin_left = 37.0
+margin_top = 52.0
+margin_right = 949.0
+margin_bottom = 1860.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ColorRect/start" to="ColorRect/start" method="_on_start_pressed"]
+[connection signal="pressed" from="ColorRect/manual" to="ColorRect/manual" method="_on_manual_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/close" to="ColorRect/ColorRect/close" method="_on_close_pressed"]
